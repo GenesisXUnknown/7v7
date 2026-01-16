@@ -54,6 +54,25 @@ public:
     void MoveForward(float Value);
     void MoveRight(float Value);
 
+    // Animation states
+    UFUNCTION(BlueprintPure, Category = "Animation")
+    bool IsThrowingAnimation() const { return bIsThrowingAnimation; }
+
+    UFUNCTION(BlueprintPure, Category = "Animation")
+    bool IsCatchingAnimation() const { return bIsCatchingAnimation; }
+
+    UFUNCTION(BlueprintPure, Category = "Animation")
+    bool IsTackledAnimation() const { return bIsTackledAnimation; }
+
+    UFUNCTION(BlueprintCallable, Category = "Animation")
+    void SetThrowingAnimation(bool bThrowing) { bIsThrowingAnimation = bThrowing; }
+
+    UFUNCTION(BlueprintCallable, Category = "Animation")
+    void SetCatchingAnimation(bool bCatching) { bIsCatchingAnimation = bCatching; }
+
+    UFUNCTION(BlueprintCallable, Category = "Animation")
+    void SetTackledAnimation(bool bTackled) { bIsTackledAnimation = bTackled; }
+
     // Eligible receivers (for QB)
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Football")
     TArray<AFootballCharacter*> EligibleReceivers;
@@ -76,6 +95,15 @@ protected:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Football")
     float DefensePursuitSpeed;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Animation")
+    bool bIsThrowingAnimation;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Animation")
+    bool bIsCatchingAnimation;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Animation")
+    bool bIsTackledAnimation;
 
     FTransform SpawnTransform;
 

@@ -17,6 +17,9 @@ AFootballCharacter::AFootballCharacter()
     PassSpeed = 2000.f;
     PassLeadTime = 0.5f;
     DefensePursuitSpeed = 400.f;
+    bIsThrowingAnimation = false;
+    bIsCatchingAnimation = false;
+    bIsTackledAnimation = false;
 
     // Enable overlap events
     GetCapsuleComponent()->SetGenerateOverlapEvents(true);

@@ -13,10 +13,16 @@ public class Football7v7 : ModuleRules
 			"CoreUObject",
 			"Engine",
 			"InputCore",
-			"AIModule"
+			"AIModule",
+			"GameplayTasks",
+			"NavigationSystem",
+			"UMG"
 		});
 
-		PrivateDependencyModuleNames.AddRange(new string[] { });
+		PrivateDependencyModuleNames.AddRange(new string[] {
+			"Slate",
+			"SlateCore"
+		});
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });
